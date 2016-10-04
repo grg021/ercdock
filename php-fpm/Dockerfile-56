@@ -133,6 +133,20 @@ RUN if [ ${INSTALL_IMAGICK} = true ]; then \
 # Copy imagick configuration
 COPY ./imagick.ini /usr/local/etc/php/conf.d/imagick.ini
 
+#####################################
+# PHP Zip:
+#####################################
+USER root
+ARG INSTALL_ZIP=true
+ENV INSTALL_ZIP ${INSTALL_ZIP}
+RUN if [ ${INSTALL_ZIP} = true ]; then \
+    # Install Zip
+    printf "\n" | pecl install zip \
+;fi
+
+# Copy imagick configuration
+COPY ./zip.ini /usr/local/etc/php/conf.d/zip.ini
+
 #
 #--------------------------------------------------------------------------
 # Final Touch
