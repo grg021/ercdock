@@ -206,7 +206,7 @@ RUN if [ ${INSTALL_AEROSPIKE_EXTENSION} = false ]; then \
 # PHP Imagick:
 #####################################
 USER root
-ARG INSTALL_IMAGICK=true
+ARG INSTALL_IMAGICK=false
 ENV INSTALL_IMAGICK ${INSTALL_IMAGICK}
 RUN if [ ${INSTALL_IMAGICK} = true ]; then \
     # Install Imagick
