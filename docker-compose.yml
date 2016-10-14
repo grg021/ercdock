@@ -321,3 +321,14 @@ services:
         ports:
             - "8025:8025"
             - "1025:1025"
+
+### pm2 Container ##################################
+
+    pm2:
+        build: ./pm2
+        environment:
+                    APP: socket.js
+        volumes_from:
+                    - volumes_source
+        ports:
+            - "8880:3000"
